@@ -10,12 +10,13 @@ if(isset($_POST['id'])){
             $row['text']=$_POST['text'][$idx];
             $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
             $Title->save($row);
+            // echo "sh: {$_POST['sh']} ; id: {$id}; ".($_POST['sh']==$id ? 'true' : 'false')."<br/>";
         }
     }
 }
 
-// to("../admin.php?do=title");
+to("../admin.php?do=title");
 
-print_r($_POST);
+// print_r($_POST);
 
 ?>
