@@ -23,8 +23,8 @@
     </div>
     <iframe style="display:none;" name="back" id="back"></iframe>
     <div id="main">
-        <a title="" href="?">
-            <div class="ti" style="background:url(&#39;use/&#39;); background-size:cover;"></div>
+        <a title="" href="index.php">
+            <div class="ti" style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
             <!--標題-->
         </a>
         <div id="ms">
@@ -48,13 +48,11 @@
                         <div class="mainmu">
                             校園映象資料管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=total"
-                     onclick="op('#cover','#cvr','./modal/view.php')">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=total">
                         <div class="mainmu">
                             進站總人數管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=bottom"
-                        onclick="op('#cover','#cvr','./modal/bottom.php')">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=bottom">
                         <div class="mainmu">
                             頁尾版權資料管理 </div>
                     </a>
