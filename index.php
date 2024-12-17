@@ -55,7 +55,7 @@
 			$do=$_GET['do']??'main'; //只有用isset時可以這樣寫			
 			// include "./front/{$do}.php";
 			$file="./front/{$do}.php";
-			if(file_exists("{$file}.php")){
+			if(file_exists("{$file}")){
 				include $file;
 			}else{
 				include "./front/main.php";
@@ -69,9 +69,27 @@
                     onclick="lo(&#39;?do=admin&#39;)">管理登入</button>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
+                    <div class="cent" id="up" onclick="pp(1)">
+                        <img src="./icon/up.jpg" alt="" srcset="">
+                    </div>
+                    <div class="cent">
+                        <?php
+                        $imgs=$Image->all(['sh'=>1]);
+                        foreach($imgs as $idx => $img){
+                            echo "<div class='im' id='ssaa{$idx}'>";
+                            echo "<img src='./upload/{$img['img']}' style='width:150px;height:103px;border:3px solid orange'>";
+                            echo "</div>";
+                        }
+                        ?>
+                    </div>
+                    <div class="cent" id="dn" onclick="pp(2)">
+                        <img src="./icon/dn.jpg" alt="" srcset="">
+                    </div>
+
+
                     <script>
                     var nowpage = 0,
-                        num = 0;
+                        num = <?=$Image->count(['sh'=>1]);?>;
 
                     function pp(x) {
                         var s, t;
